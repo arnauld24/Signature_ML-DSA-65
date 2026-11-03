@@ -1,11 +1,11 @@
 # Python virtual environments
 # .venv/
 # venv/
-env/
-ml_dsa/Include/
-ml_dsa/Lib/
-ml_dsa/Scripts/
-ml_dsa/pyvenv.cfg
+# env/
+# ml_dsa/Include/
+# ml_dsa/Lib/
+# ml_dsa/Scripts/
+# ml_dsa/pyvenv.cfg
 
 # Python-generated files
 __pycache__/
