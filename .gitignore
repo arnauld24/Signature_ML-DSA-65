@@ -1,0 +1,28 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ml_dsa/Include/
+ml_dsa/Lib/
+ml_dsa/Scripts/
+ml_dsa/pyvenv.cfg
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local ML-DSA inputs and generated keys/signatures
+/document.bin
+/document.dat
+/ml_dsa/document.bin
+/ml_dsa/document.dat
+/ml_dsa/file.bin
+/ml_dsa/file_tampered.bin
+/ml_dsa/key_*.pem
+/ml_dsa/pub_*.pem
+/ml_dsa/sig_*.sig
