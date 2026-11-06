@@ -3,15 +3,10 @@ import subprocess
 import pandas as pd
 
 
-# Indiquez le chemin exact de votre exécutable OpenSSL 3.5 sous Windows
-OPENSSL_PATH = r"C:\Program Files\FireDaemon OpenSSL 3.5\bin\openssl.exe"
-
-
-def run_cmd(cmd):
-  # Remplace automatiquement 'openssl' par le chemin absolu sécurisé
-  full_cmd = cmd.replace("openssl", f'"{OPENSSL_PATH}"', 1)
-  res = subprocess.run(full_cmd, shell=True, capture_output=True, text=True)
-  return res.returncode, res.stdout.strip(), res.stderr.strip()
+def run_openssl(cmd):
+    """Exécute une commande OpenSSL et retourne le code de retour, stdout et stderr."""
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    return result.returncode, result.stdout.strip(), result.stderr.strip()
 
 #Question 4 : Comparaison expérimentale des variantes et analyse réseau
 print("------------------------------------------------------------------")
