@@ -2,9 +2,6 @@ import os
 import subprocess
 import pandas as pd
 
-# Indiquez le chemin exact de votre exécutable OpenSSL 3.5 sous Windows
-OPENSSL_PATH = r"C:\Program Files\FireDaemon OpenSSL 3.5\bin\openssl.exe"
-
 
 def run_openssl(cmd):
   # Remplace automatiquement 'openssl' par le chemin absolu sécurisé
