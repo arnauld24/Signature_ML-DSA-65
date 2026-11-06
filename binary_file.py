@@ -30,11 +30,11 @@ for f in files_to_clean:
         os.remove(f)
 
 # Création d'un fichier binaire aléatoire de 1 Ko (1024 octets)
-with open("document.dat", "wb") as f:
+with open("document.bin", "wb") as f:
     f.write(os.urandom(1024))
 
 # 3. Mesure de la taille brute
 sig_size_q1 = os.path.getsize("document.bin")
 print(f"-> Taille brute du fichier de signature (sig_65.sig) : {sig_size_q1} octets")
 
-print("[+] Fichier binaire 'document.dat' (1024 octets) créé avec succès.\n")
+print("[+] Fichier binaire 'document.bin' (1024 octets) créé avec succès.\n")
