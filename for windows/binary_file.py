@@ -21,7 +21,7 @@ files_to_clean = [
     "pub_65.pem",
     "key_other.pem",
     "pub_other.pem",
-    "signed_document.sig",
+    "signed_document_65.sig",
     "sig_truncated.sig",
     "sig_ctx.sig",
 ]
@@ -35,6 +35,6 @@ with open("document.dat", "wb") as f:
 
 # 3. Mesure de la taille brute
 sig_size_q1 = os.path.getsize("document.bin")
-print(f"-> Taille brute du fichier de signature (signed_document.sig) : {sig_size_q1} octets")
+print(f"-> Taille brute du fichier de signature (signed_document_65.sig) : {sig_size_q1} octets")
 
 print("[+] Fichier binaire 'document.dat' (1024 octets) créé avec succès.\n")
