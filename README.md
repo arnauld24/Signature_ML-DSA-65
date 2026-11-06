@@ -9,17 +9,40 @@ de messages altérés et comparent les profils ML-DSA-44, ML-DSA-65 et ML-DSA-87
 - Python 3
 - OpenSSL 3.5 ou version ultérieure avec la prise en charge de ML-DSA
 - `pandas` pour les scripts qui affichent des tableaux comparatifs
+- `Hex Editor` (extension VS Code) pour la visualisation et la modification des fichiers binaires
 
 OpenSSL est un programme système distinct : son installation n'est pas incluse
 dans celle de Python. Vérifiez la disponibilité de Python avec `py --version`
 et celle d'OpenSSL avec `openssl version`. Pour voir les algorithmes connus de
 votre installation, exécutez :
 
-```powershell
+```powershell ou terminal Linux
 openssl list -signature-algorithms
 ```
 
 La sortie doit contenir ML-DSA-44, ML-DSA-65 et ML-DSA-87.
+
+## Créer l'environnement Python sous une distribution Linux
+
+Exécutez les commandes suivantes depuis le dossier racine du projet, qui
+contient ce README :
+
+```terminal
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install pandas
+```
+Vérifiez que `pandas` est installé :
+
+```terminal
+python -m pip show pandas
+```
+Pour quitter l'environnement virtuel :
+
+```powershell
+deactivate
+```
 
 ## Créer l'environnement Python sous Windows
 
@@ -52,29 +75,6 @@ Pour quitter l'environnement virtuel :
 ```powershell
 deactivate
 ```
-## Créer l'environnement Python sous Linux
-Exécutez les commandes suivantes depuis le dossier racine du projet, qui
-contient ce README :
-
-py -m venv .venv
-source bin\activate
-pip install --upgrade pip
-pip install pandas
-```
-
-Vérifiez que `pandas` est installé :
-
-```terminal
-python "import pandas; print(pandas.__version__)"
-```
-
-Pour quitter l'environnement virtuel :
-
-```terminal
-deactivate
-```
-
-
 
 ## Configurer OpenSSL
 
