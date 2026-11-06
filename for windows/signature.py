@@ -29,16 +29,16 @@ print("------------------------------------------------------------------")
 
 # # 2. Signature du fichier binaire
  code_sig, out_sig, err_sig = run_openssl(
-     "openssl pkeyutl -sign -in document.bin -inkey key_65.pem -out sig_65.sig"
+     "openssl pkeyutl -sign -in document.bin -inkey key_65.pem -out signed_document_65.sig"
  )
 
 # # 3. Mesure de la taille brute
- sig_size_q1 = os.path.getsize("sig_65.sig")
-print(f"-> Taille brute du fichier de signature (sig_65.sig) : {sig_size_q1} octets")
+ sig_size_q1 = os.path.getsize("signed_document_65.sig")
+print(f"-> Taille brute du fichier de signature (signed_document_65.sig) : {sig_size_q1} octets")
 
 # 4. Vérification nominale avec la clé publique
 code_ver, out_ver, err_ver = run_openssl(
-    "openssl pkeyutl -verify -in document.bin -sigfile sig_65.sig -pubin -inkey pub_65.pem"
+    "openssl pkeyutl -verify -in document.bin -sigfile signed_document_65.sig -pubin -inkey pub_65.pem"
 )
 
 if code_ver == 0:
