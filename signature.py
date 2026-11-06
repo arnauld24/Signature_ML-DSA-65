@@ -14,22 +14,22 @@ print("------------------------------------------------------------------")
 print("QUESTION 1 : Signature binaire, vérification et mesure de taille")
 print("------------------------------------------------------------------")
 
-# # 1. Génération de la paire de clés ML-DSA-65
-# code, out, err = run_openssl(
-#     "openssl genpkey -algorithm ML-DSA-65 -out key_65.pem"
-# )
-# code_pub, out_pub, err_pub = run_openssl(
-#     "openssl pkey -in key_65.pem -pubout -out pub_65.pem"
-# )
+# 1. Génération de la paire de clés ML-DSA-65
+code, out, err = run_openssl(
+    "openssl genpkey -algorithm ML-DSA-65 -out key_65.pem"
+)
+code_pub, out_pub, err_pub = run_openssl(
+    "openssl pkey -in key_65.pem -pubout -out pub_65.pem"
+)
 
-# # 2. Signature du fichier binaire
-# code_sig, out_sig, err_sig = run_openssl(
-#     "openssl pkeyutl -sign -in document.bin -inkey key_65.pem -out sig_65.sig"
-# )
+# 2. Signature du fichier binaire
+code_sig, out_sig, err_sig = run_openssl(
+    "openssl pkeyutl -sign -in document.bin -inkey key_65.pem -out sig_65.sig"
+)
 
-# # 3. Mesure de la taille brute
-# sig_size_q1 = os.path.getsize("sig_65.sig")
-# print(f"-> Taille brute du fichier de signature (sig_65.sig) : {sig_size_q1} octets")
+# 3. Mesure de la taille brute
+sig_size_q1 = os.path.getsize("sig_65.sig")
+print(f"-> Taille brute du fichier de signature (sig_65.sig) : {sig_size_q1} octets")
 
 # 4. Vérification nominale avec la clé publique
 code_ver, out_ver, err_ver = run_openssl(

@@ -52,6 +52,29 @@ Pour quitter l'environnement virtuel :
 ```powershell
 deactivate
 ```
+## Créer l'environnement Python sous Linux
+Exécutez les commandes suivantes depuis le dossier racine du projet, qui
+contient ce README :
+
+py -m venv .venv
+source bin\activate
+pip install --upgrade pip
+pip install pandas
+```
+
+Vérifiez que `pandas` est installé :
+
+```terminal
+python "import pandas; print(pandas.__version__)"
+```
+
+Pour quitter l'environnement virtuel :
+
+```terminal
+deactivate
+```
+
+
 
 ## Configurer OpenSSL
 
