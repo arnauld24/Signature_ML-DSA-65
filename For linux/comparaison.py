@@ -23,9 +23,9 @@ for algo in algos:
     sfile = f"sig_{algo}.sig"
 
     # Génération clé et signature
-    run_cmd(f"openssl genpkey -algorithm {algo} -out {kfile}")
-    run_cmd(f"openssl pkey -in {kfile} -pubout -out {pfile}")
-    run_cmd(f"openssl pkeyutl -sign -in document.bin -inkey {kfile} -out {sfile}")
+    run_openssl(f"openssl genpkey -algorithm {algo} -out {kfile}")
+    run_openssl(f"openssl pkey -in {kfile} -pubout -out {pfile}")
+    run_openssl(f"openssl pkeyutl -sign -in document.bin -inkey {kfile} -out {sfile}")
 
     pub_size = os.path.getsize(pfile)
     sig_size = os.path.getsize(sfile)
