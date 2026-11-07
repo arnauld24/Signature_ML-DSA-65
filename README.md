@@ -14,7 +14,7 @@ de messages altérés et comparent les profils ML-DSA-44, ML-DSA-65 et ML-DSA-87
 
 
 
-## Ouvrez le projet en fonction de votre plateforme consulter les fichiers README_USAGE
+## Ouvrez le projet en fonction de votre plateforme consulter les fichiers README_USAGE (Une distribution Linux est recommandée)
 
 ### Description des fichiers Python
 
